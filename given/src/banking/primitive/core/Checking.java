@@ -1,5 +1,11 @@
 package banking.primitive.core;
 
+//added class banner
+/**
+  Class: Checking	
+  
+  Description: Extends Account to create a checking account for the user. Deposit and withdraw 
+*/
 public class Checking extends Account {
 
 	private static final long serialVersionUID = 11L;
