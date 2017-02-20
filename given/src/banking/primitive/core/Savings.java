@@ -1,13 +1,27 @@
+//added source banner
+/*
+  File:	Savings.java
+  Author: Kevin Gary
+  Date:	
+  
+  Description: Savings account extends Account. Methods for for deposit and withdraw
+*/
 package banking.primitive.core;
 
 public class Savings extends Account {
 	private static final long serialVersionUID = 111L;
 	private int numWithdraws = 0;
 
+	/**
+	 * Savings account name
+	 */
 	public Savings(String name) {
 		super(name);
 	}
 
+	/**
+	 * Savings account name and balance
+	 */
 	public Savings(String name, float balance) throws IllegalArgumentException {
 		super(name, balance);
 	}
@@ -43,9 +57,14 @@ public class Savings extends Account {
 		}
 		return false;
 	}
-	
-	public String getType() { return "Checking"; }
+	/**
+	 * type of account fixed to Savings from Checking
+	 */
+	public String getType() { return "Savings"; }
 
+	/**
+	 * Balance of a savings account
+	 */
 	public String toString() {
 		return "Savings: " + getName() + ": " + getBalance();
 	}
