@@ -1,5 +1,18 @@
+//added source banner and class file
+/*
+  File:	Acccount.java
+  Author: Kevin Gary
+  Date:	
+  
+  Description: Account class
+*/
 package banking.primitive.core;
 
+/**
+  Class: Account	
+  
+  Description: Basic account class
+*/
 public abstract class Account implements java.io.Serializable {
     private static final long serialVersionUID = 1L;
 
