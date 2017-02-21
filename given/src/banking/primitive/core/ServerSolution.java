@@ -27,8 +27,9 @@ class ServerSolution implements AccountServer {
 				int size = sizeI.intValue();
 				for (int i=0; i < size; i++) {
 					Account acc = (Account) in.readObject();
-					if (acc != null)
+					if (acc != null) {
 						accountMap.put(acc.getName(), acc);
+					}
 				}
 			}
 		} catch (Exception e) {
@@ -38,7 +39,8 @@ class ServerSolution implements AccountServer {
 			if (in != null) {
 				try {
 					in.close();
-				} catch (Throwable t) {
+				} 
+				catch (Throwable t) {
 					t.printStackTrace();
 				}
 			}
@@ -54,15 +56,18 @@ class ServerSolution implements AccountServer {
 		if ("Checking".equals(type)) {
 			acc = new Checking(name, balance);
 
-		} else if ("Savings".equals(type)) {
+		} 
+		else if ("Savings".equals(type)) {
 			acc = new Savings(name, balance);
 
-		} else {
+		} 
+		else {
 			throw new IllegalArgumentException("Bad account type:" + type);
 		}
 		try {
 			accountMap.put(acc.getName(), acc);
-		} catch (Exception exc) {
+		} 
+		catch (Exception exc) {
 			return false;
 		}
 		return true;
@@ -71,7 +76,9 @@ class ServerSolution implements AccountServer {
 	public boolean newAccount(String type, String name, float balance) 
 		throws IllegalArgumentException {
 		
-		if (balance < 0.0f) throw new IllegalArgumentException("New account may not be started with a negative balance");
+		if (balance < 0.0f) {
+			throw new IllegalArgumentException("New account may not be started with a negative balance");
+		}
 		
 		return newAccountFactory(type, name, balance);
 	}
@@ -120,7 +127,8 @@ class ServerSolution implements AccountServer {
 			if (out != null) {
 				try {
 					out.close();
-				} catch (Throwable t) {
+				} 
+				catch (Throwable t) {
 					t.printStackTrace();
 				}
 			}
