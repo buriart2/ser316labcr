@@ -1,11 +1,5 @@
 package banking.primitive.core;
 
-//added class banner
-/**
-  Class: Checking	
-  
-  Description: Extends Account to create a checking account for the user. Deposit and withdraw 
-*/
 public class Checking extends Account {
 
 	private static final long serialVersionUID = 11L;
@@ -48,8 +42,10 @@ public class Checking extends Account {
 			if (getState() == State.OPEN || (getState() == State.OVERDRAWN && balance > -100.0f)) {
 				balance = balance - amount;
 				numWithdraws++;
-				if (numWithdraws > 10)
+				//adding curly bracket to if statement
+				if (numWithdraws > 10) {
 					balance = balance - 2.0f;
+				}
 				if (balance < 0.0f) {
 					setState(State.OVERDRAWN);
 				}
@@ -58,8 +54,10 @@ public class Checking extends Account {
 		}
 		return false;
 	}
-
-	public String getType() { return "Checking"; }
+	//adding proper curly bracket style
+	public String getType() { 
+		return "Checking"; 
+	}
 	
 	public String toString() {
 		return "Checking: " + getName() + ": " + getBalance();
